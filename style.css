@@ -1,0 +1,171 @@
+/* Fichier: style.css */
+
+/* Importation d'une police Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding: 2em 0;
+}
+
+header {
+    /* Nouveau dégradé et ombre */
+    background: linear-gradient(to right, #001f3f, #004080);
+    color: white;
+    padding: 4em 0;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    letter-spacing: 2px;
+}
+
+header p {
+    font-size: 1.2em;
+    font-style: italic;
+    margin-top: 0.5em;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+nav {
+    background-color: #001f3f;
+    padding: 1em 0;
+    text-align: center;
+    position: sticky; /* Rendre la barre de navigation "collante" */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0 1.5em;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #3498db;
+}
+
+h2 {
+    text-align: center;
+    color: #001f3f;
+    font-size: 2.5em;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 0.5em;
+    margin-top: 2em;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #ddd;
+    margin: 3em 0;
+}
+
+#voitures {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centrer les cartes */
+    gap: 20px;
+    margin-top: 2em;
+}
+
+.car-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 1.5em;
+    text-align: center;
+    width: 320px; /* Taille légèrement plus grande */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.car-card:hover {
+    transform: translateY(-10px); /* Plus grand effet au survol */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.car-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1em;
+    transition: transform 0.5s ease;
+}
+
+.car-card:hover img {
+    transform: scale(1.05); /* Zoom subtil au survol */
+}
+
+.car-card h3 {
+    color: #001f3f;
+    font-size: 1.6em;
+    margin-top: 0;
+}
+
+.car-card p {
+    margin: 0.5em 0;
+    color: #555;
+}
+
+.car-card a {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 50px; /* Boutons plus ronds */
+    margin-top: 1.5em;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.car-card a:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+#contact {
+    text-align: center;
+    padding: 2em 0;
+    background-color: white;
+    margin-top: 3em;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#contact h2 {
+    border-bottom: none;
+}
+
+#contact p {
+    margin: 0.5em 0;
+    color: #555;
+}
+
+footer {
+    background-color: #001f3f;
+    color: white;
+    text-align: center;
+    padding: 2em 0;
+    margin-top: 3em;
+}
