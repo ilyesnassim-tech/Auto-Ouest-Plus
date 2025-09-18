@@ -3,37 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page d'exemple</title>
+    <title>Nom du Concessionnaire - Voitures d'Occasion et Neuves</title>
+    <style>
+        /* Styles CSS de base pour le site */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #34495e;
+            color: white;
+            padding: 0.5em 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0 1em;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 2em 0;
+        }
+        .car-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 1em;
+            margin-bottom: 1em;
+            text-align: center;
+        }
+        .car-card img {
+            max-width: 100%;
+            height: auto;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
+
     <header>
-        <h1>Bienvenue sur ma page web</h1>
-        <nav>
-            <ul>
-                <li><a href="#section1">Section 1</a></li>
-                <li><a href="#section2">Section 2</a></li>
-                <li><a href="#section3">Section 3</a></li>
-            </ul>
-        </nav>
+        <h1>Nom du Concessionnaire Auto</h1>
+        <p>Votre partenaire de confiance pour l'achat et la vente de véhicules.</p>
     </header>
 
-    <section id="section1">
-        <h2>Section 1</h2>
-        <p>Ceci est le contenu de la première section.</p>
-    </section>
+    <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#voitures">Nos Voitures</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-    <section id="section2">
-        <h2>Section 2</h2>
-        <p>Ceci est le contenu de la deuxième section.</p>
-    </section>
+    <div class="container">
+        <section id="accueil">
+            <h2>Bienvenue chez nous !</h2>
+            <p>Découvrez notre large sélection de voitures neuves et d'occasion. Nous nous engageons à vous offrir des véhicules de qualité et un service client exceptionnel.</p>
+        </section>
 
-    <section id="section3">
-        <h2>Section 3</h2>
-        <p>Ceci est le contenu de la troisième section.</p>
-    </section>
+        <hr>
+
+        <section id="voitures">
+            <h2>Nos Voitures à Vendre</h2>
+
+            <div class="car-card">
+                <h3>Voiture 1 : Marque, Modèle</h3>
+                <img src="https://via.placeholder.com/400x250" alt="Image de la Voiture 1">
+                <p>Année : 2020 | Kilométrage : 50 000 km</p>
+                <p>Prix : 15 000 €</p>
+                <a href="#">Détails du véhicule</a>
+            </div>
+
+            <div class="car-card">
+                <h3>Voiture 2 : Marque, Modèle</h3>
+                <img src="https://via.placeholder.com/400x250" alt="Image de la Voiture 2">
+                <p>Année : 2022 | Kilométrage : 15 000 km</p>
+                <p>Prix : 25 000 €</p>
+                <a href="#">Détails du véhicule</a>
+            </div>
+
+            </section>
+
+        <hr>
+
+        <section id="contact">
+            <h2>Contactez-nous</h2>
+            <p>Adresse : 123 Rue de la Concession, 75000 Ville</p>
+            <p>Téléphone : 01 23 45 67 89</p>
+            <p>Email : contact@concessionnaire.fr</p>
+            <p>Horaires d'ouverture : Lundi - Samedi, 9h-18h</p>
+        </section>
+    </div>
 
     <footer>
-        <p>© 2024 Mon site web</p>
+        <p>&copy; 2024 Nom du Concessionnaire Auto. Tous droits réservés.</p>
     </footer>
+
 </body>
 </html>
+
