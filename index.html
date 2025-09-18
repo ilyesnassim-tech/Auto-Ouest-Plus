@@ -1,363 +1,119 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Astronomie — Explorateur interactif</title>
-  <meta name="description" content="Site éducatif et interactif sur l'astronomie : système solaire, galerie, timeline et mini-quiz." />
-
-  <!-- Styles (responsive, modern, accessible) -->
-  <style>
-    :root{
-      --bg:#050814;
-      --card:#0b1220;
-      --glass: rgba(255,255,255,0.04);
-      --accent:#7bdff6;
-      --accent-2:#8b6cff;
-      --muted:#9aa4b2;
-      --glass-2: rgba(255,255,255,0.03);
-      --max-width:1100px;
-      color-scheme: dark;
-      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;background: radial-gradient(ellipse at bottom,#021021 0%, var(--bg) 60%);color:#e6eef6}
-    a{color:var(--accent)}
-    .wrap{max-width:var(--max-width);margin:28px auto;padding:18px}
-
-    header{display:flex;align-items:center;gap:16px}
-    .logo{display:flex;align-items:center;gap:12px}
-    .logo .dot{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 6px 30px rgba(123,223,246,0.08), inset 0 -6px 18px rgba(0,0,0,0.25);display:flex;align-items:center;justify-content:center;font-weight:700}
-    h1{font-size:20px;margin:0}
-    p.lead{margin:0;color:var(--muted);font-size:14px}
-
-    nav{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
-    nav a{padding:8px 12px;background:var(--glass);border-radius:10px;text-decoration:none;font-size:13px;color:var(--accent);}
-
-    /* Hero */
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:20px;margin-top:18px;align-items:start}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-radius:12px;padding:18px;box-shadow:0 6px 30px rgba(2,8,15,0.6);border:1px solid rgba(255,255,255,0.03)}
-    .intro h2{margin:0 0 8px 0}
-    .intro p{color:var(--muted);line-height:1.5}
-    .cta{display:flex;gap:8px;margin-top:12px}
-    .btn{background:linear-gradient(90deg,var(--accent),var(--accent-2));padding:10px 14px;border-radius:10px;color:#02121b;font-weight:600;text-decoration:none}
-
-    /* Solar system panel */
-    .solar{height:420px;position:relative;overflow:hidden;border-radius:10px}
-    .stars{position:absolute;inset:0;background-image:radial-gradient(#ffffff11 1px, transparent 1px);background-size: 3px 3px;opacity:0.35}
-    .planet{position:absolute;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#02121b;font-weight:700;box-shadow:0 8px 24px rgba(0,0,0,0.5)}
-
-    /* orbits */
-    .orbit{position:absolute;border:1px dashed rgba(255,255,255,0.03);border-radius:50%;transform:translate(-50%,-50%)}
-
-    /* Gallery */
-    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
-    .thumb{position:relative;border-radius:10px;overflow:hidden;background:linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)}
-    .thumb img{width:100%;height:160px;object-fit:cover;display:block}
-    .thumb .cap{padding:8px;font-size:13px;color:var(--muted)}
-
-    /* timeline */
-    .timeline{display:flex;flex-direction:column;gap:12px}
-    .event{display:flex;gap:12px;align-items:flex-start}
-    .ev-dot{min-width:10px;height:10px;border-radius:50%;background:var(--accent)}
-    .ev-body{background:var(--glass-2);padding:12px;border-radius:8px;color:var(--muted)}
-
-    /* quiz */
-    .quiz{display:grid;gap:10px}
-    .option{padding:10px;border-radius:8px;background:#071122;border:1px solid rgba(255,255,255,0.02);cursor:pointer}
-    .option.correct{outline:3px solid rgba(123,223,246,0.18)}
-    .option.wrong{opacity:0.6}
-
-    footer{margin-top:24px;padding:12px;color:var(--muted);font-size:13px;text-align:center}
-
-    /* responsive */
-    @media(max-width:900px){
-      .hero{grid-template-columns:1fr}
-      .solar{height:320px}
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nom du Concessionnaire - Voitures d'Occasion et Neuves</title>
+    <style>
+        /* Styles CSS de base pour le site */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #34495e;
+            color: white;
+            padding: 0.5em 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0 1em;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 2em 0;
+        }
+        .car-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 1em;
+            margin-bottom: 1em;
+            text-align: center;
+        }
+        .car-card img {
+            max-width: 100%;
+            height: auto;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-  <div class="wrap">
+
     <header>
-      <div class="logo">
-        <div class="dot">A</div>
-        <div>
-          <h1>Astronomie — Explorateur</h1>
-          <p class="lead">Découvre le système solaire, des images réelles, une timeline et un mini-quiz interactif.</p>
-        </div>
-      </div>
+        <h1>Nom du Concessionnaire Auto</h1>
+        <p>Votre partenaire de confiance pour l'achat et la vente de véhicules.</p>
     </header>
 
-    <nav aria-label="Navigation principale">
-      <a href="#solar">Système solaire</a>
-      <a href="#gallery">Galerie</a>
-      <a href="#timeline">Timeline</a>
-      <a href="#quiz">Quiz</a>
-      <a href="#resources">Ressources</a>
+    <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#voitures">Nos Voitures</a>
+        <a href="#contact">Contact</a>
     </nav>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="card intro">
-        <h2>Explore visuellement et apprends</h2>
-        <p>Site pédagogique réalisé pour apprendre et partager : animations, faits vérifiés et ressources pour aller plus loin. Le code est simple à modifier — ouvre <code>index.html</code> et commence à personnaliser.</p>
-        <div class="cta">
-          <a class="btn" href="#gallery">Voir la galerie</a>
-          <a class="btn" href="#quiz" style="background:linear-gradient(90deg,var(--accent-2),var(--accent));">Faire le quiz</a>
-        </div>
+    <div class="container">
+        <section id="accueil">
+            <h2>Bienvenue chez nous !</h2>
+            <p>Découvrez notre large sélection de voitures neuves et d'occasion. Nous nous engageons à vous offrir des véhicules de qualité et un service client exceptionnel.</p>
+        </section>
 
-        <hr style="margin:16px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)" />
-        <h3 style="margin:8px 0 6px">Faits rapides</h3>
-        <ul style="color:var(--muted);margin:0 0 4px 18px">
-          <li>La lumière met ~8 minutes pour aller du Soleil à la Terre.</li>
-          <li>Jupiter est la planète la plus massive du Système solaire.</li>
-          <li>La Voie lactée contient 100–400 milliards d'étoiles (estimation).</li>
-        </ul>
-      </div>
+        <hr>
 
-      <aside class="card solar" id="solar" aria-label="Simulation du système solaire">
-        <div class="stars" aria-hidden="true"></div>
-        <!-- center (Sun) -->
-        <div id="center" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);">
-          <div class="planet" style="width:120px;height:120px;background:radial-gradient(circle at 20% 20%, #fff5b1, #ffb74d);border:1px solid rgba(255,255,255,0.06);">☀️</div>
-        </div>
+        <section id="voitures">
+            <h2>Nos Voitures à Vendre</h2>
 
-        <!-- orbits + planets (created by JS) -->
-      </aside>
-    </section>
+            <div class="car-card">
+                <h3>Voiture 1 : Marque, Modèle</h3>
+                <img src="https://via.placeholder.com/400x250" alt="Image de la Voiture 1">
+                <p>Année : 2020 | Kilométrage : 50 000 km</p>
+                <p>Prix : 15 000 €</p>
+                <a href="#">Détails du véhicule</a>
+            </div>
 
-    <!-- GALLERY -->
-    <section class="card" id="gallery" style="margin-top:18px">
-      <h2>Galerie — images d'astronomie</h2>
-      <p style="color:var(--muted)">Images libres de démonstration (placeholders). Clique pour agrandir.</p>
-      <div class="gallery" id="galleryGrid">
-        <!-- thumbnails added by JS -->
-      </div>
-    </section>
+            <div class="car-card">
+                <h3>Voiture 2 : Marque, Modèle</h3>
+                <img src="https://via.placeholder.com/400x250" alt="Image de la Voiture 2">
+                <p>Année : 2022 | Kilométrage : 15 000 km</p>
+                <p>Prix : 25 000 €</p>
+                <a href="#">Détails du véhicule</a>
+            </div>
 
-    <!-- TIMELINE -->
-    <section class="card" id="timeline" style="margin-top:18px">
-      <h2>Timeline — événements clés</h2>
-      <div class="timeline" id="timelineList">
-        <!-- events injected by JS -->
-      </div>
-    </section>
+            </section>
 
-    <!-- QUIZ -->
-    <section class="card" id="quiz" style="margin-top:18px">
-      <h2>Mini-quiz</h2>
-      <p style="color:var(--muted)">Teste tes connaissances — 3 questions rapides.</p>
-      <div class="quiz" id="quizArea">
-        <!-- quiz generated by JS -->
-      </div>
-      <div style="margin-top:10px;color:var(--muted)" id="quizResult"></div>
-    </section>
+        <hr>
 
-    <!-- RESOURCES -->
-    <section class="card" id="resources" style="margin-top:18px">
-      <h2>Ressources & crédits</h2>
-      <ul style="color:var(--muted)">
-        <li>Images de démonstration : <em>picsum.photos</em> (remplace par des images d'archives pour un usage réel).</li>
-        <li>Sites conseillés : NASA, ESA, Wikimedia Commons (pour images libres).</li>
-      </ul>
-    </section>
+        <section id="contact">
+            <h2>Contactez-nous</h2>
+            <p>Adresse : 123 Rue de la Concession, 75000 Ville</p>
+            <p>Téléphone : 01 23 45 67 89</p>
+            <p>Email : contact@concessionnaire.fr</p>
+            <p>Horaires d'ouverture : Lundi - Samedi, 9h-18h</p>
+        </section>
+    </div>
 
     <footer>
-      <small>Créé par toi — modifie le contenu et héberge gratuitement (GitHub Pages / Vercel). Bon apprentissage !</small>
+        <p>&copy; 2024 Nom du Concessionnaire Auto. Tous droits réservés.</p>
     </footer>
-  </div>
 
-  <!-- Lightbox modal -->
-  <div id="lightbox" aria-hidden="true" style="position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.7);z-index:80">
-    <img id="lightboxImg" alt="" style="max-width:90%;max-height:90%;border-radius:10px;box-shadow:0 12px 50px rgba(0,0,0,0.7)" />
-  </div>
-
-  <!-- Scripts (interaction: solar system, gallery, timeline, quiz) -->
-  <script>
-    /* -------------------------- Utilities -------------------------- */
-    function el(sel){return document.querySelector(sel)}
-    function ce(tag,cls){const e=document.createElement(tag); if(cls) e.className=cls; return e}
-
-    /* -------------------------- Solar system -------------------------- */
-    (function renderSolar(){
-      const solar = el('.solar');
-      const centerX = solar.clientWidth/2;
-      const centerY = solar.clientHeight/2;
-
-      // planet data (distance in px, size in px, color, label)
-      const planets = [
-        {name:'Mercure', d:60, size:12, color:'#bdbdbd'},
-        {name:'Vénus', d:100, size:18, color:'#e5c07b'},
-        {name:'Terre', d:140, size:20, color:'#6fb3ff'},
-        {name:'Mars', d:180, size:16, color:'#f08a5d'},
-        {name:'Jupiter', d:240, size:36, color:'#d4a373'},
-        {name:'Saturne', d:320, size:32, color:'#e6d9b5'},
-        {name:'Uranus', d:380, size:24, color:'#b7f0ff'},
-        {name:'Neptune', d:440, size:24, color:'#8aa0ff'}
-      ];
-
-      planets.forEach((p,i)=>{
-        // orbit
-        const orbit = ce('div','orbit');
-        const r = p.d*1.05;
-        orbit.style.width = r*2 + 'px';
-        orbit.style.height = r*2 + 'px';
-        orbit.style.left = '50%';
-        orbit.style.top = '50%';
-        orbit.style.zIndex = 1;
-        solar.appendChild(orbit);
-
-        // planet node
-        const node = ce('div','planet');
-        node.style.width = p.size + 'px';
-        node.style.height = p.size + 'px';
-        node.style.left = '50%';
-        node.style.top = '50%';
-        node.style.transform = `translate(-50%,-50%) translate(${r}px,0)`;
-        node.style.background = `radial-gradient(circle at 20% 20%, #fff, ${p.color})`;
-        node.title = p.name;
-        node.setAttribute('role','img');
-        node.setAttribute('aria-label',p.name);
-
-        // label
-        const lbl = ce('span');
-        lbl.style.position='absolute';lbl.style.top='110%';lbl.style.left='50%';lbl.style.transform='translateX(-50%)';lbl.style.fontSize='11px';lbl.style.color='var(--muted)';
-        lbl.textContent = p.name;
-        node.appendChild(lbl);
-
-        solar.appendChild(node);
-
-        // animation
-        const speed = 8 + i*6; // arbitrary
-        let angle = Math.random()*Math.PI*2;
-        function step(){
-          angle += 0.008 * (1 + i*0.08);
-          const x = centerX + Math.cos(angle) * r - p.size/2;
-          const y = centerY + Math.sin(angle) * r - p.size/2;
-          node.style.left = x + 'px';
-          node.style.top = y + 'px';
-          requestAnimationFrame(step);
-        }
-        step();
-
-        // click to show info
-        node.addEventListener('click', ()=>{
-          alert(p.name + ' — taille approximative affichée: ' + p.size + 'px\nDistance relative affichée: ' + p.d + 'px');
-        });
-      });
-
-      // handle resize recalcul
-      window.addEventListener('resize', ()=>{
-        // quick reload to recalc positions
-        solar.innerHTML = '<div class="stars" aria-hidden="true"></div>' + solar.innerHTML;
-        // simple approach: reload page to re-render; lighter than heavy recalculation here
-        setTimeout(()=>location.reload(),200);
-      });
-    })();
-
-    /* -------------------------- Gallery -------------------------- */
-    (function galleryInit(){
-      const gallery = el('#galleryGrid');
-      const images = [
-        {id:1003, title:'Galaxie spirale (placeholder)'},
-        {id:1011, title:'Nébuleuse colorée (placeholder)'},
-        {id:1025, title:'Planète lointaine (placeholder)'},
-        {id:1035, title:'Dôme d\'étoiles (placeholder)'},
-        {id:1043, title:'Champ d\'étoiles (placeholder)'},
-        {id:1052, title:'Ciel profond (placeholder)'}
-      ];
-
-      images.forEach((img)=>{
-        const t = ce('div','thumb');
-        const image = ce('img');
-        // using picsum.photos placeholders; remplace par des vraies images plus tard
-        image.src = `https://picsum.photos/id/${img.id}/800/500`;
-        image.alt = img.title;
-        image.loading = 'lazy';
-        t.appendChild(image);
-        const cap = ce('div','cap');
-        cap.textContent = img.title;
-        t.appendChild(cap);
-        t.addEventListener('click', ()=>{
-          const light = el('#lightbox');
-          const li = el('#lightboxImg');
-          li.src = image.src;
-          li.alt = image.alt;
-          light.style.display = 'flex';
-          light.setAttribute('aria-hidden','false');
-        });
-        gallery.appendChild(t);
-      });
-
-      // lightbox close
-      const light = el('#lightbox');
-      light.addEventListener('click', (e)=>{ if(e.target.id === 'lightbox' || e.target.id === 'lightboxImg'){light.style.display='none'; light.setAttribute('aria-hidden','true');} });
-    })();
-
-    /* -------------------------- Timeline -------------------------- */
-    (function timelineInit(){
-      const events = [
-        {year:'1609', title:'Galilée utilise la lunette', text:'Galilée observe la Lune et découvre des satellites autour de Jupiter.'},
-        {year:'1781', title:'Découverte d\'Uranus', text:'William Herschel identifie Uranus comme une planète.'},
-        {year:'1916', title:'Théorie de la relativité générale', text:'Einstein publie des travaux clés qui changent la compréhension de la gravitation.'},
-        {year:'1990', title:'Lancement du télescope Hubble', text:'Hubble ouvre une nouvelle ère d\'observations spatiales précises.'},
-        {year:'2012', title:'Découverte d\'exoplanètes', text:'Méthodes modernes permettent d\'identifier des milliers d\'exoplanètes.'}
-      ];
-
-      const list = el('#timelineList');
-      events.forEach(ev=>{
-        const item = ce('div','event');
-        const dot = ce('div','ev-dot');
-        const body = ce('div','ev-body');
-        const h = ce('strong'); h.textContent = ev.year + ' — ' + ev.title;
-        const p = ce('div'); p.textContent = ev.text;
-        body.appendChild(h); body.appendChild(p);
-        item.appendChild(dot); item.appendChild(body);
-        list.appendChild(item);
-      });
-    })();
-
-    /* -------------------------- Quiz -------------------------- */
-    (function quizInit(){
-      const quiz = el('#quizArea');
-      const result = el('#quizResult');
-      const questions = [
-        {q:'Combien de temps la lumière met-elle pour aller du Soleil à la Terre (approx.)?', choices:['~8 minutes','~8 heures','~8 secondes'], answer:0},
-        {q:'Quelle est la plus grosse planète du Système solaire?', choices:['Saturne','Jupiter','Neptune'], answer:1},
-        {q:'Quel instrument a révolutionné l\'astronomie en 1990?', choices:['Radiotélescope','Télescope Hubble','Spectromètre'], answer:1}
-      ];
-
-      let score=0; let current=0;
-      function renderQuestion(i){
-        quiz.innerHTML='';
-        const Q = questions[i];
-        const qq = ce('div'); qq.innerHTML = `<strong>${i+1}. ${Q.q}</strong>`;
-        quiz.appendChild(qq);
-        Q.choices.forEach((c,idx)=>{
-          const o = ce('div','option'); o.tabIndex=0; o.textContent = c;
-          o.addEventListener('click', ()=>select(idx,o,Q.answer));
-          o.addEventListener('keypress', (e)=>{ if(e.key==='Enter') select(idx,o,Q.answer)});
-          quiz.appendChild(o);
-        });
-      }
-      function select(idx,node,correct){
-        // disable options
-        Array.from(quiz.children).forEach(ch=>ch.classList.add('disabled'));
-        if(idx===correct){ node.classList.add('correct'); score++; }
-        else{ node.classList.add('wrong'); Array.from(quiz.children)[correct+1]?.classList.add('correct'); }
-        current++;
-        if(current<questions.length){ setTimeout(()=>renderQuestion(current),900); }
-        else{ setTimeout(()=>showResult(),900); }
-      }
-      function showResult(){ result.textContent = `Tu as obtenu ${score}/${questions.length} bonnes réponses.` }
-
-      renderQuestion(0);
-    })();
-
-    /* -------------------------- Accessibility small fixes -------------------------- */
-    // close lightbox with key
-    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ const lb=el('#lightbox'); lb.style.display='none'; lb.setAttribute('aria-hidden','true'); } });
-  </script>
 </body>
 </html>
